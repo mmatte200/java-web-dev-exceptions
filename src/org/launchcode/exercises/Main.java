@@ -1,5 +1,7 @@
 package org.launchcode.exercises;
 
+import org.launchcode.Temperature.TemperatureException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,17 +17,39 @@ public class Main {
         studentFiles.put("Elizabeth", "MyCode.java");
         studentFiles.put("Stefanie", "CoolProgram.java");
 
-        // Test out your CheckFileExtension() function!
+
     }
 
-    public static void Divide(int x, int y)
-    {
-        // Write code here!
+    public static int Divide(int x, int y) {
+
+        if (y == 0) {
+            try {
+                 Divide(10, 0);
+            } catch (ArithmeticException e) {
+                e.printStackTrace();
+            }
+        }
+        return x / y;
     }
 
-    public static int CheckFileExtension(String fileName)
-    {
-        // Write code here!
-    }
 
+    public static int CheckFileExtension(String fileName) {
+        int submissionPoints = 0;
+
+        if (fileName == "" || fileName == null) {
+            try {
+                throw new Exception("Invalid file name!");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else if (!fileName.contains(".java")) {
+            return submissionPoints -= 1;
+        } else {
+            submissionPoints += 1;
+        }
+
+
+        return submissionPoints;
+    }
 }
