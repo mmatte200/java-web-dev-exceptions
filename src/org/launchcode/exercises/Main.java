@@ -22,15 +22,20 @@ public class Main {
 
     public static int Divide(int x, int y) {
 
+
         if (y == 0) {
             try {
-                 Divide(10, 0);
+                Divide(10, 0);
             } catch (ArithmeticException e) {
-                e.printStackTrace();
+
+                System.out.println("y should be greater than 0");
             }
+
+
         }
-        return x / y;
+        return x/y;
     }
+
 
 
     public static int CheckFileExtension(String fileName) {
